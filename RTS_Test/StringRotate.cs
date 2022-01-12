@@ -10,15 +10,13 @@ namespace RTS_Test
     {
         public string RotateString(string stringToRotate, int numberToRotateBy)
         {
-            // Checks to see if number to rotate by is less than the string length. If it is greater, let the user know and exit
-            if (numberToRotateBy > stringToRotate.Length)
-            {
-                Console.WriteLine("The number must be greater than zero and less than the number of letters in the string to rotate ({0})",stringToRotate.Length);
-                Console.ReadLine(); // Wait for user to press a button
-                Environment.Exit(0);// Exit
-            }
-            Console.WriteLine("String to rotate: " + stringToRotate);   // Shows string that we are rotating
+            Console.WriteLine("String to rotate: " + stringToRotate + " (string length: " + stringToRotate.Length + ")");   // Shows string that we are rotating
             Console.WriteLine("Number to rotate by: " + numberToRotateBy);    // Shows number to rotate by
+
+            // We use modulo here to get the remainder of dividing the int to rotate by the length of the string
+            // Essentially, we don't care about how many times the letters need to shift, only how many letters need to shift 
+            // for the remainder
+            numberToRotateBy = numberToRotateBy % stringToRotate.Length;
             string stringAnswer = string.Empty; // Holds our answer
             string tempString = string.Empty;   // Holds a temp string to work with
             int lengthOfString = stringToRotate.Length; // var to hold string length

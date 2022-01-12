@@ -10,7 +10,7 @@ namespace RTS_Test
     {
         static void Main(string[] args)
         {
-            GetAboveAndBelow(); // Tests get above and below
+            //GetAboveAndBelow(); // Tests get above and below
             RotateString(); // Tests rotate string
         }
 
@@ -31,7 +31,7 @@ namespace RTS_Test
         {
             string returnedString = string.Empty;
             StringRotate rotate = new StringRotate();
-            returnedString = rotate.RotateString("MyString", 5);
+            returnedString = rotate.RotateString("MyString", 10355);
             Console.WriteLine("The new string is: " + returnedString);    // Write the answer
             Console.ReadLine(); // Wait for input to exit
 
